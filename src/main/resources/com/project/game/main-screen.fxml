@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainSceneController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="232.0" layoutY="37.0" prefHeight="57.0" prefWidth="136.0" text="2048">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="153.0" prefHeight="35.0" prefWidth="300.0" text="Choose the  level to continue">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="256.0" layoutY="110.0" text="The game">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="easy" layoutX="78.0" layoutY="233.0" mnemonicParsing="false" onAction="#onLevelButtonClicked" prefHeight="35.0" prefWidth="72.0" text="Easy" />
+      <Button fx:id="easyMedium" layoutX="150.0" layoutY="282.0" mnemonicParsing="false" onAction="#onLevelButtonClicked" prefHeight="35.0" prefWidth="90.0" text="Easy-medium" />
+      <Button fx:id="medium" alignment="CENTER" contentDisplay="CENTER" layoutX="255.0" layoutY="323.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Medium" />
+      <Button fx:id="mediumHard" layoutX="368.0" layoutY="282.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="90.0" text="Medium-hard" />
+      <Button fx:id="hard" layoutX="450.0" layoutY="233.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="72.0" text="Hard" />
+   </children>
+</AnchorPane>
