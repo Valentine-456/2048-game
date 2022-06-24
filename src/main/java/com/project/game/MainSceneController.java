@@ -3,16 +3,16 @@ package com.project.game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MainSceneController {
-    private Stage stage;
-
     @FXML
     private Button hard;
 
@@ -27,27 +27,39 @@ public class MainSceneController {
 
     @FXML
     private Button mediumHard;
-
     @FXML
-    private void onLevelButtonClicked(ActionEvent event) throws IOException {
-        if (easy.isPressed()) {
-            switchScene("level-easy.fxml");
-        } else if (easyMedium.isPressed()) {
-            switchScene("level-easy-medium.fxml");
-        } else if (medium.isPressed()) {
-            switchScene("level-medium.fxml");
-        } else if (mediumHard.isPressed()) {
-            switchScene("level-medium-hard.fxml");
-        } else if (hard.isPressed()) {
-            switchScene("level-hard.fxml");
-        }
+    void onEasyClicked(MouseEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        switchScene("level-easy.fxml", stage, "easy");
     }
 
-    private void switchScene(String sceneFileName) throws IOException {
+    @FXML
+    void onEasyMedClicked(MouseEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        switchScene("level-easy-medium.fxml", stage, "easy-medium");
+    }
+
+    @FXML
+    void onMediumClicked(MouseEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        switchScene("level-medium.fxml", stage, "medium");
+
+    }
+    @FXML
+    void onMediumHardClicked(MouseEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        switchScene("level-medium-hard.fxml", stage, "medium-hard");
+    }
+    @FXML
+    void onHardClicked(MouseEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        switchScene("level-hard.fxml", stage, "hard");
+    }
+
+    private void switchScene(String sceneFileName, Stage stage, String title) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource(sceneFileName));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        stage = GameApplication.getStage();
-        stage.setTitle("");
+        stage.setTitle(title);
         stage.setScene(scene);
         stage.show();
     }
