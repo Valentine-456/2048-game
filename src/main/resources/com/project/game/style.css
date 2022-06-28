@@ -1,0 +1,79 @@
+ .game-cell {
+   -fx-background-color: #cdc1b4;
+   -fx-background-radius: 10px;
+   -fx-stroke: #bbada0;
+   -fx-background-repeat: no-repeat;
+   -fx-background-size: contain;
+   -fx-background-position: center;
+ }
+
+ .game-board {
+    -fx-background-color: #bbada0;
+    -fx-background-radius: 10px;
+    -fx-padding: 12px;
+ }
+
+ .cell-2 {
+ -fx-background-image: url("../../../images/tiles/tile-2-compressed-removebg-preview.png");
+ -fx-background-color: #eee4da;
+ }
+
+ .cell-4 {
+  -fx-background-image: url("../../../images/tiles/tile-4-compressed-removebg-preview.png");
+  -fx-background-color: #ede0c8;
+  }
+
+  .cell-8 {
+    -fx-background-image: url("../../../images/tiles/tile-8-compressed-removebg-preview.png");
+    -fx-background-color: #f2b179;
+    }
+
+  .cell-16 {
+    -fx-background-image: url("../../../images/tiles/tile-16-compressed-removebg-preview.png");
+    -fx-background-color: #f59563;
+  }
+
+  .cell-32 {
+      -fx-background-image: url("../../../images/tiles/tile-32-compressed-removebg-preview.png");
+      -fx-background-color: #f67c5f;
+    }
+
+  .cell-64 {
+      -fx-background-image: url("../../../images/tiles/tile-64-compressed-removebg-preview.png");
+      -fx-background-color: #f65e3b;
+    }
+
+    .cell-128 {
+        -fx-background-image: url("../../../images/tiles/tile-128-compressed-removebg-preview.png");
+        -fx-background-color: #edcf72;
+      }
+
+    .cell-256 {
+        -fx-background-image: url("../../../images/tiles/tile-256-compressed-removebg-preview.png");
+        -fx-background-color: #edcc61;
+      }
+
+  .cell-512 {
+      -fx-background-image: url("../../../images/tiles/tile-512-compressed-removebg-preview.png");
+      -fx-background-color: #edc850;
+    }
+
+  .cell-1024 {
+      -fx-background-image: url("../../../images/tiles/tile-1024-compressed-removebg-preview.png");
+      -fx-background-color: #edc53f;
+    }
+
+  .cell-2048 {
+      -fx-background-image: url("../../../images/tiles/tile-2048-compressed-removebg-preview.png");
+      -fx-background-color: #edc22e;
+  }
+
+  .cell-4096 {
+      -fx-background-image: url("../../../images/tiles/tile-4096-compressed-removebg-preview.png");
+      -fx-background-color: #3c3a32;
+  }
+
+  .cell-8192 {
+      -fx-background-image: url("../../../images/tiles/tile-8192-compressed-removebg-preview.png");
+      -fx-background-color: #3c3a32;
+  }
