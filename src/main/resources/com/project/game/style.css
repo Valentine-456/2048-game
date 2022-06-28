@@ -1,0 +1,11 @@
+ .game-cell {
+   -fx-background-color: #cdc1b4;
+   -fx-background-radius: 10px;
+   -fx-stroke: #bbada0;
+ }
+
+ .game-board {
+    -fx-background-color: #bbada0;
+    -fx-background-radius: 10px;
+    -fx-padding: 12px;
+ }
