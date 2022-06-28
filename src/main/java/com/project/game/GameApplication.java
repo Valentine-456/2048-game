@@ -14,7 +14,7 @@ public class GameApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource("main-screen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 450);
         stage.setTitle("2048 Game");
-        stage.getIcons().add(new Image("file:src/main/resources/com/project/game/icon.png"));
+        stage.getIcons().add(new Image("file:src/main/resources/images/icon.png"));
         stage.setScene(scene);
         stage.show();
     }
