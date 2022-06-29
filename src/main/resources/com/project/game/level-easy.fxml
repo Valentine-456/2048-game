@@ -1,91 +1,618 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="650.0" style="-fx-background-color: #faf8ef;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="686.0" prefWidth="776.0" style="-fx-background-color: #faf8ef;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainSceneController">
     <children>
         <Label layoutX="33.0" layoutY="15.0" prefHeight="49.0" prefWidth="91.0" text="2048">
             <font>
                 <Font name="Times New Roman" size="43.0" />
             </font>
         </Label>
-        <Label layoutX="461.0" layoutY="15.0" text="Score:">
+        <Label layoutX="611.0" layoutY="14.0" text="Score:">
             <font>
                 <Font name="Times New Roman" size="20.0" />
             </font>
         </Label>
-        <Label layoutX="451.0" layoutY="35.0" prefHeight="30.0" prefWidth="72.0" text="123123">
+        <Label layoutX="601.0" layoutY="37.0" prefHeight="30.0" prefWidth="72.0" text="123123">
             <font>
                 <Font size="20.0" />
             </font>
         </Label>
-        <AnchorPane layoutX="42.0" layoutY="84.0" prefHeight="546.0" prefWidth="566.0" style="-fx-background-color: #bbada0;">
-            <children>
-                <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="331.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" AnchorPane.leftAnchor="331.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="14.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="14.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="14.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="14.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="14.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="14.0" layoutY="469.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="94.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="94.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="94.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="94.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="94.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="94.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="94.0" layoutY="469.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="174.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="174.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="174.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="174.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="174.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="174.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="174.0" layoutY="469.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="251.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="251.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="251.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="251.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="251.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="251.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="251.0" layoutY="469.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="331.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="331.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="331.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="14.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="331.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="331.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="331.0" layoutY="469.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="407.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="407.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="407.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="407.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="407.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="407.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="407.0" layoutY="469.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="479.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="479.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="479.0" layoutY="161.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="479.0" layoutY="238.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="479.0" layoutY="315.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="479.0" layoutY="393.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="70.0" layoutX="479.0" layoutY="469.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #cdc1b4; -fx-stroke: #BBADA0;" width="70.0" />
-            </children>
-        </AnchorPane>
-        <Button fx:id="backButton" layoutX="549.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#getBack" prefHeight="38.0" prefWidth="38.0">
+        <Button fx:id="backButton" layoutX="683.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#getBack" prefHeight="38.0" prefWidth="38.0">
             <graphic>
                 <ImageView fitHeight="40.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #bbada0;">
                     <image>
-                        <Image url="@../../../../../image/back.png" />
+                        <Image url="@../../../images/home.png" />
                     </image>
                 </ImageView>
             </graphic>
         </Button>
+      <GridPane layoutX="120.0" layoutY="119.0" prefHeight="535.0" prefWidth="535.0" styleClass="game-board" stylesheets="@style.css">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-2" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-4" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7" GridPane.rowIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-8" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-2048" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-512" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7" GridPane.rowIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7" GridPane.rowIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-32" />
+               </styleClass>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-32" />
+               </styleClass>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-64" />
+               </styleClass>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-128" />
+               </styleClass>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="game-cell" />
+                  <String fx:value="cell-4" />
+               </styleClass>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7" GridPane.rowIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="7">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="7" GridPane.rowIndex="3">
+               <font>
+                  <Font size="28.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
     </children>
 </AnchorPane>
