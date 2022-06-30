@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #faf8ef;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainSceneController">
+<AnchorPane prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #faf8ef;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainController">
     <children>
         <Label layoutX="150.0" layoutY="153.0" prefHeight="35.0" prefWidth="300.0" text="Choose the  level to continue">
             <font>
