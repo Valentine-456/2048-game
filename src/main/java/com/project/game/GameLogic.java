@@ -2,7 +2,9 @@ package com.project.game;
 
 import com.project.game.keys.Directions;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class GameLogic {
     private Score score = new Score();
@@ -38,8 +40,22 @@ public class GameLogic {
         return this.board;
     }
 
-    // TODO: addRandomTile
-    private void addRandomTile() {}
+    private void addRandomTile() {
+        ArrayList<int[]> emptyCells = new ArrayList<>();
+
+        for (int i = 0; i < this.gameBoardSize; i++) {
+            for (int j = 0; j < this.gameBoardSize; j++) {
+                if(this.board[i][j] == null) emptyCells.add(new int[] {i, j});
+            }
+        }
+
+        Random random = new Random();
+        int randomEmptyCell = random.nextInt(emptyCells.size());
+        int[] emptyCoordinates = emptyCells.get(randomEmptyCell);
+        int i = emptyCoordinates[0];
+        int j = emptyCoordinates[1];
+        this.board[i][j] = Tile.generateRandomNewTile();
+    }
     // TODO: checkSameTilesInRow
     private boolean checkSameTilesInRow() {
         for (int row = 0; row < gameBoardSize; row++) {
