@@ -2,30 +2,61 @@ package com.project.game;
 
 import com.project.game.keys.Directions;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
 public class GameLogic {
     private Score score = new Score();
-    private Tile tileObj = new Tile();
-    private int numOfTurns = 0;
     private int gameBoardSize;
-    private Tile board[][] = new Tile[gameBoardSize][gameBoardSize];
+    private Tile[][] board;
 
     public GameLogic(int matrixSize) {
         this.gameBoardSize = matrixSize;
+        this.board = new Tile[gameBoardSize][gameBoardSize];
     }
 
+    // TODO: gameTurn
     public void gameTurn(Directions direction) {
         if (checkSameTilesInRow())
-            tileObj.mergeWithPrev(direction);
+//            tileObj.mergeWithPrev(direction);
         moveTiles();
         updateScore();
         if (checkEmptyBoxes())
             addRandomTile();
-        numOfTurns++;
 
     }
 
-    private void addRandomTile() {}
+    public void initGame() {
+        for (Tile[] array: board) {
+            Arrays.fill(array, null);
+        }
+        this.addRandomTile();
+        this.addRandomTile();
+        this.score.resetScore();
+    }
 
+    public Tile[][] getRenderMatrix() {
+        return this.board;
+    }
+
+    private void addRandomTile() {
+        ArrayList<int[]> emptyCells = new ArrayList<>();
+
+        for (int i = 0; i < this.gameBoardSize; i++) {
+            for (int j = 0; j < this.gameBoardSize; j++) {
+                if(this.board[i][j] == null) emptyCells.add(new int[] {i, j});
+            }
+        }
+
+        Random random = new Random();
+        int randomEmptyCell = random.nextInt(emptyCells.size());
+        int[] emptyCoordinates = emptyCells.get(randomEmptyCell);
+        int i = emptyCoordinates[0];
+        int j = emptyCoordinates[1];
+        this.board[i][j] = Tile.generateRandomNewTile();
+    }
+    // TODO: checkSameTilesInRow
     private boolean checkSameTilesInRow() {
         for (int row = 0; row < gameBoardSize; row++) {
             for (int col = 0; col < gameBoardSize; col++) {
@@ -35,9 +66,11 @@ public class GameLogic {
         }
         return false;
     }
-
+    // TODO: moveTiles
     private void moveTiles(){}
-    private void updateScore(){}
+    private void updateScore(){
+        this.score.updateScoreAfterMove(0);
+    }
     private boolean checkEmptyBoxes(){
         for (int row = 0; row < gameBoardSize; row++) {
             for (int col = 0; col < gameBoardSize; col++) {

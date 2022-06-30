@@ -17,4 +17,9 @@ public class Score {
         this.steps = 0;
     }
 
+    public void updateScoreAfterMove(int score) {
+        this.score += score;
+        this.steps++;
+    }
+
 }
