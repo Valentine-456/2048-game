@@ -50,7 +50,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="tile_0_0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="28.0" />
                </font>
@@ -58,7 +58,7 @@
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
+            <Button fx:id="tile_0_1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
@@ -70,7 +70,7 @@
                   <String fx:value="cell-4" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
+            <Button fx:id="tile_0_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
                <font>
                   <Font size="28.0" />
                </font>
@@ -82,7 +82,7 @@
                   <String fx:value="cell-8" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+            <Button fx:id="tile_1_0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
@@ -94,7 +94,7 @@
                   <String fx:value="cell-4096" />
                </styleClass>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button fx:id="tile_1_1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
@@ -102,7 +102,7 @@
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="tile_1_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
@@ -110,7 +110,7 @@
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
+            <Button fx:id="tile_2_0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="2">
                <font>
                   <Font size="28.0" />
                </font>
@@ -118,7 +118,7 @@
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="tile_2_1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="28.0" />
                </font>
@@ -126,7 +126,7 @@
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="tile_2_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="28.0" />
                </font>
