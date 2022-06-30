@@ -10,7 +10,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainSceneController {
+public class MainController {
+    // --------------------- Main scene methods-------------
     @FXML
     private Button hard;
 
@@ -79,5 +80,6 @@ public class MainSceneController {
         stage.setScene(scene);
         stage.show();
     }
+    // --------------------- Keyboard handler methods -----------
 
 }

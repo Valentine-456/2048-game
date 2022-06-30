@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="610.0" prefWidth="650.0" style="-fx-background-color: #faf8ef;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainSceneController">
+<AnchorPane prefHeight="610.0" prefWidth="650.0" style="-fx-background-color: #faf8ef;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainController">
    <children>
       <Label layoutX="33.0" layoutY="15.0" prefHeight="49.0" prefWidth="91.0" text="2048">
          <font>
