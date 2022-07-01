@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class GameLogic {
-    private Score score = new Score();
+    public Score score = new Score();
     private int gameBoardSize;
-    private Tile[][] board;
+    public Tile[][] board;
 
     public GameLogic(int matrixSize) {
         this.gameBoardSize = matrixSize;
@@ -28,7 +28,7 @@ public class GameLogic {
 
     private int mergeTiles(Directions direction) {
         ArrayList<ArrayList<Tile>> duplicates = getTheSameTile(direction);
-        ArrayList<Tile> tiles = flattenListOfListsImperatively(duplicates);
+        ArrayList<Tile> tiles = UtilsFunctions.flattenListOfListsImperatively(duplicates);
         int scoreIncrementAfterTurn = 0;
 
         for (Tile tile : tiles) {
@@ -42,12 +42,6 @@ public class GameLogic {
         }
 
         return scoreIncrementAfterTurn;
-    }
-
-    private ArrayList<Tile> flattenListOfListsImperatively(ArrayList<ArrayList<Tile>> nestedList) {
-        ArrayList<Tile> ls = new ArrayList<>();
-        nestedList.forEach(ls::addAll);
-        return ls;
     }
 
     public void initGame() {
@@ -199,8 +193,90 @@ public class GameLogic {
         return tilesToMergeList;
     }
 
-    // TODO: moveTiles
-    private void moveTiles(Directions direction){}
+    private void moveTiles(Directions direction){
+        ArrayList<ArrayList<Tile>> notNullTiles = new ArrayList<>();
+        for (int i = 0; i < getRenderMatrix().length; i++){
+            ArrayList<Tile> notNullRow = new ArrayList<>();
+            for (int j = 0; j < getRenderMatrix().length; j++) {
+                if(this.board[i][j] != null)
+                    notNullRow.add(this.board[i][j]);
+            }
+            notNullTiles.add(notNullRow);
+        }
+
+        switch (direction) {
+            case RIGHT -> this.board = this.moveTilesRight(notNullTiles);
+            case LEFT -> this.board = this.moveTilesLeft(notNullTiles);
+            case UP -> this.board = this.moveTilesUp(this.board);
+            case DOWN -> this.board = this.moveTilesDown(this.board);
+        }
+    }
+
+    private Tile[][] moveTilesLeft(ArrayList<ArrayList<Tile>> notNullArrayList) {
+        Tile[][] shiftedBoardMatrix = new Tile[this.gameBoardSize][this.gameBoardSize];
+        for (Tile[] row: shiftedBoardMatrix) {
+            Arrays.fill(row, null);
+        }
+        for (int i = 0; i < notNullArrayList.size(); i++) {
+            if(notNullArrayList.get(i).size() == 0) continue;
+            for (int j = 0; j < notNullArrayList.get(i).size(); j++) {
+                shiftedBoardMatrix[i][j] = notNullArrayList.get(i).get(j);
+            }
+        }
+
+        return shiftedBoardMatrix;
+    }
+    private Tile[][] moveTilesRight(ArrayList<ArrayList<Tile>> notNullArrayList) {
+        Tile[][] shiftedBoardMatrix = new Tile[this.gameBoardSize][this.gameBoardSize];
+        for (Tile[] row: shiftedBoardMatrix) {
+            Arrays.fill(row, null);
+        }
+        for (int i = 0; i < notNullArrayList.size(); i++) {
+            if(notNullArrayList.get(i).size() == 0) continue;
+            for (int j = 0; j < notNullArrayList.get(i).size(); j++) {
+                shiftedBoardMatrix[i][this.gameBoardSize - 1 - j] = notNullArrayList.get(i).get(j);
+            }
+        }
+
+        return shiftedBoardMatrix;
+    }
+    private Tile[][] moveTilesUp(Tile[][] inputBoardMatrix) {
+        Tile[][] newMatrix = UtilsFunctions.transposeMatrix(inputBoardMatrix);
+
+        ArrayList<ArrayList<Tile>> notNullTiles = new ArrayList<>();
+        for (int i = 0; i < newMatrix.length; i++){
+            ArrayList<Tile> notNullRow = new ArrayList<>();
+            for (int j = 0; j < newMatrix.length; j++) {
+                if(newMatrix[i][j] != null)
+                    notNullRow.add(this.board[i][j]);
+            }
+            notNullTiles.add(notNullRow);
+        }
+
+        Tile[][] shiftedTransposedMatrix = this.moveTilesLeft(notNullTiles);
+        Tile[][] shiftedMatrix = UtilsFunctions.transposeMatrix(shiftedTransposedMatrix);
+
+        return shiftedMatrix;
+    }
+    private Tile[][] moveTilesDown(Tile[][] inputBoardMatrix) {
+        Tile[][] newMatrix = UtilsFunctions.transposeMatrix(inputBoardMatrix);
+
+        ArrayList<ArrayList<Tile>> notNullTiles = new ArrayList<>();
+        for (int i = 0; i < newMatrix.length; i++){
+            ArrayList<Tile> notNullRow = new ArrayList<>();
+            for (int j = 0; j < newMatrix.length; j++) {
+                if(newMatrix[i][j] != null)
+                    notNullRow.add(this.board[i][j]);
+            }
+            notNullTiles.add(notNullRow);
+        }
+
+        Tile[][] shiftedTransposedMatrix = this.moveTilesRight(notNullTiles);
+        Tile[][] shiftedMatrix = UtilsFunctions.transposeMatrix(shiftedTransposedMatrix);
+
+        return shiftedMatrix;
+    }
+
     private void updateScore(int update){
         this.score.updateScoreAfterMove(update);
     }
