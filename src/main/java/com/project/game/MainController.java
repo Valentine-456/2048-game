@@ -16,22 +16,6 @@ public class MainController {
     private GameLogic gameSession;
 
     // --------------------- Main scene methods-------------
-    @FXML
-    private Button hard;
-
-    @FXML
-    private Button easy;
-
-    @FXML
-    private Button easyMedium;
-
-    @FXML
-    private Button medium;
-
-    @FXML
-    private Button mediumHard;
-    @FXML
-    private Button backButton;
 
     @FXML
     private void getBack(MouseEvent event) throws IOException {
@@ -110,6 +94,4 @@ public class MainController {
             }
         }
     }
-    // --------------------- Keyboard handler methods -----------
-
 }
