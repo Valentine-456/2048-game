@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="610.0" prefWidth="650.0" style="-fx-background-color: #faf8ef;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainController">
@@ -162,14 +163,15 @@
             </Button>
          </children>
       </GridPane>
-      <Label layoutX="461.0" layoutY="15.0" text="Score:">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#cdc1b4" height="58.0" layoutX="447.0" layoutY="11.0" stroke="TRANSPARENT" strokeType="INSIDE" width="84.0" />
+      <Label layoutX="465.0" layoutY="14.0" text="Score:" textFill="WHITE">
          <font>
-            <Font name="Times New Roman" size="20.0" />
+            <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="score" alignment="CENTER" layoutX="451.0" layoutY="35.0" prefHeight="30.0" prefWidth="72.0" textAlignment="CENTER">
+      <Label fx:id="score" alignment="CENTER" layoutX="447.0" layoutY="34.0" prefHeight="32.0" prefWidth="84.0" text="0" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
       <Button fx:id="backButton" layoutX="549.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#getBack" prefHeight="38.0" prefWidth="38.0">
@@ -180,6 +182,11 @@
                </image>
             </ImageView>
          </graphic>
+      </Button>
+      <Button fx:id="new_game" layoutX="325.0" layoutY="18.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #8f7a66;" text="New Game" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
       </Button>
    </children>
 </AnchorPane>

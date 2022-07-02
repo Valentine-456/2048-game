@@ -21,6 +21,8 @@ public class MainController {
     private GameLogic gameSession;
 
     // --------------------- Main scene methods-------------
+    @FXML
+    Button new_game;
 
     @FXML
     private void getBack(MouseEvent event) throws IOException {
@@ -82,9 +84,14 @@ public class MainController {
             }
             Tile[][] changedMatrix = this.gameSession.getRenderMatrix();
             this.renderGameChanges(changedMatrix, scene);
-            ((Label) scene.lookup("#score")).setText(String.valueOf(gameSession.score.getScore()));
         });
 
+        new_game = (Button) scene.lookup("#new_game");
+        new_game.addEventHandler(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
+            this.gameSession.initGame();
+            Tile[][] newMatrix = this.gameSession.getRenderMatrix();
+            this.renderGameChanges(newMatrix, scene);
+        });
     }
 
     private void switchToMainScene(Stage stage) throws IOException {
@@ -97,6 +104,8 @@ public class MainController {
 
     @FXML
     private void renderGameChanges(Tile[][] matrix, Scene scene) {
+        ((Label) scene.lookup("#score")).setText(String.valueOf(gameSession.score.getScore()));
+
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 Button btn = (Button) scene.lookup(String.format("#tile_%d_%d", i, j));
