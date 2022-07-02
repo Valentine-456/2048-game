@@ -218,7 +218,7 @@ public class GameLogic {
             Arrays.fill(row, null);
         }
         for (int i = 0; i < notNullArrayList.size(); i++) {
-            if(notNullArrayList.get(i).size() == 0) continue;
+            if(notNullArrayList.get(i).isEmpty()) continue;
             for (int j = 0; j < notNullArrayList.get(i).size(); j++) {
                 shiftedBoardMatrix[i][j] = notNullArrayList.get(i).get(j);
             }
@@ -232,7 +232,7 @@ public class GameLogic {
             Arrays.fill(row, null);
         }
         for (int i = 0; i < notNullArrayList.size(); i++) {
-            if(notNullArrayList.get(i).size() == 0) continue;
+            if(notNullArrayList.get(i).isEmpty()) continue;
             for (int j = 0; j < notNullArrayList.get(i).size(); j++) {
                 shiftedBoardMatrix[i][this.gameBoardSize - 1 - j] = notNullArrayList.get(i).get(j);
             }
@@ -254,9 +254,7 @@ public class GameLogic {
         }
 
         Tile[][] shiftedTransposedMatrix = this.moveTilesLeft(notNullTiles);
-        Tile[][] shiftedMatrix = UtilsFunctions.transposeMatrix(shiftedTransposedMatrix);
-
-        return shiftedMatrix;
+        return UtilsFunctions.transposeMatrix(shiftedTransposedMatrix);
     }
     private Tile[][] moveTilesDown(Tile[][] inputBoardMatrix) {
         Tile[][] newMatrix = UtilsFunctions.transposeMatrix(inputBoardMatrix);
@@ -272,9 +270,7 @@ public class GameLogic {
         }
 
         Tile[][] shiftedTransposedMatrix = this.moveTilesRight(notNullTiles);
-        Tile[][] shiftedMatrix = UtilsFunctions.transposeMatrix(shiftedTransposedMatrix);
-
-        return shiftedMatrix;
+        return UtilsFunctions.transposeMatrix(shiftedTransposedMatrix);
     }
 
     private void updateScore(int update){
