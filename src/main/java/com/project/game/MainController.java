@@ -11,6 +11,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -75,7 +83,10 @@ public class MainController {
         this.gameSession.initGame();
         Tile[][] matrix = this.gameSession.getRenderMatrix();
         this.renderGameChanges(matrix, scene);
+
         scene.addEventFilter(KeyEvent.KEY_PRESSED, keyEvent -> {
+            if(gameSession.score.isGameOver()) return;
+
             switch (keyEvent.getCode()) {
                 case DOWN -> gameSession.gameTurn(Directions.DOWN);
                 case UP -> gameSession.gameTurn(Directions.UP);
@@ -84,6 +95,27 @@ public class MainController {
             }
             Tile[][] changedMatrix = this.gameSession.getRenderMatrix();
             this.renderGameChanges(changedMatrix, scene);
+
+            if(gameSession.score.isGameOver()) {
+                GridPane pane = (GridPane) scene.lookup("GridPane");
+                AnchorPane rootPane = (AnchorPane) scene.lookup("AnchorPane");
+                double x = pane.getLayoutX();
+                double y = pane.getLayoutY();
+                double paneWidth = pane.getWidth();
+                double paneHeight = pane.getHeight();
+
+                Button gameOverSheet = new Button();
+                gameOverSheet.setId("game_over_sheet");
+                gameOverSheet.setLayoutX(x);
+                gameOverSheet.setLayoutY(y);
+                gameOverSheet.setPrefSize(paneWidth, paneHeight);
+                gameOverSheet.setBackground(Background.fill(Color.rgb(255, 255,255, 0.6)));
+                gameOverSheet.setText("Game Over");
+                gameOverSheet.setTextAlignment(TextAlignment.CENTER);
+                gameOverSheet.setFont(Font.font("Verdana", FontWeight.BOLD, 36));
+
+                rootPane.getChildren().add(gameOverSheet);
+            }
         });
 
         new_game = (Button) scene.lookup("#new_game");
@@ -91,6 +123,12 @@ public class MainController {
             this.gameSession.initGame();
             Tile[][] newMatrix = this.gameSession.getRenderMatrix();
             this.renderGameChanges(newMatrix, scene);
+
+            Button gameOverSheet = (Button) scene.lookup("#game_over_sheet");
+            if(gameOverSheet != null) {
+                AnchorPane rootPane = (AnchorPane) scene.lookup("AnchorPane");
+                rootPane.getChildren().remove(gameOverSheet);
+            }
         });
     }
 
