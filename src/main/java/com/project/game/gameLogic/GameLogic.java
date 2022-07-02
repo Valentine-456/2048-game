@@ -1,6 +1,7 @@
-package com.project.game;
+package com.project.game.gameLogic;
 
 import com.project.game.keys.Directions;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +10,7 @@ import java.util.Random;
 public class GameLogic {
     public Score score = new Score();
     private int gameBoardSize;
-    public Tile[][] board;
+    private Tile[][] board;
 
     public GameLogic(int matrixSize) {
         this.gameBoardSize = matrixSize;
@@ -22,6 +23,7 @@ public class GameLogic {
         updateScore(scoreIncrement);
         if (checkEmptyBoxes())
             addRandomTile();
+
 // add checking whether game is over
     }
 
@@ -39,7 +41,6 @@ public class GameLogic {
                 }
             }
         }
-
         return scoreIncrementAfterTurn;
     }
 
@@ -76,7 +77,7 @@ public class GameLogic {
         }
     }
 
-    public ArrayList<ArrayList<Tile>> getTheSameTile(Directions direction) {
+    private ArrayList<ArrayList<Tile>> getTheSameTile(Directions direction) {
         Tile tileToFind = null;
         ArrayList<ArrayList<Tile>> tilesToMergeList = new ArrayList<>();
         for (int i = 0; i < getRenderMatrix().length; i++)
@@ -90,7 +91,7 @@ public class GameLogic {
         return tilesToMergeList;
     }
 
-    private ArrayList<ArrayList<Tile>> getTheSameTileRight(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
+    private ArrayList<ArrayList<Tile>> getTheSameTileLeft(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
         for (int row = 0; row < getRenderMatrix().length; row++) {
             int col = 0;
             while (board[row][col] == null && col < getRenderMatrix().length - 1)
@@ -111,7 +112,7 @@ public class GameLogic {
         return tilesToMergeList;
     }
 
-    private ArrayList<ArrayList<Tile>> getTheSameTileLeft(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
+    private ArrayList<ArrayList<Tile>> getTheSameTileRight(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
         for (int row = 0; row < getRenderMatrix().length; row++) {
             int col = getRenderMatrix().length - 1;
             while (board[row][col] == null && col < getRenderMatrix().length - 1)
@@ -134,7 +135,7 @@ public class GameLogic {
         return tilesToMergeList;
     }
 
-    private ArrayList<ArrayList<Tile>> getTheSameTileDown(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
+    private ArrayList<ArrayList<Tile>> getTheSameTileUp(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
         Tile[][] newMatrix = UtilsFunctions.transposeMatrix(board);
         for (int row = 0; row < getRenderMatrix().length; row++) {
             int col = 0;
@@ -156,7 +157,7 @@ public class GameLogic {
         return tilesToMergeList;
     }
 
-    private ArrayList<ArrayList<Tile>> getTheSameTileUp(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
+    private ArrayList<ArrayList<Tile>> getTheSameTileDown(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
         Tile[][] newMatrix = UtilsFunctions.transposeMatrix(board);
         for (int row = 0; row < getRenderMatrix().length; row++) {
             int col = getRenderMatrix().length - 1;
@@ -190,27 +191,25 @@ public class GameLogic {
             }
             notNullTiles.add(notNullRow);
         }
-
         switch (direction) {
-            case RIGHT -> this.board = this.moveTilesRight(notNullTiles);
-            case LEFT -> this.board = this.moveTilesLeft(notNullTiles);
-            case UP -> this.board = this.moveTilesUp(this.board);
-            case DOWN -> this.board = this.moveTilesDown(this.board);
+            case RIGHT -> this.board = moveTilesRight(notNullTiles);
+            case LEFT -> this.board = moveTilesLeft(notNullTiles);
+            case UP -> this.board = moveTilesUp(board);
+            case DOWN -> this.board = moveTilesDown(board);
         }
     }
 
     private Tile[][] moveTilesLeft(ArrayList<ArrayList<Tile>> notNullArrayList) {
         Tile[][] shiftedBoardMatrix = new Tile[this.gameBoardSize][this.gameBoardSize];
-        for (Tile[] row : shiftedBoardMatrix) {
+        for (Tile[] row : shiftedBoardMatrix)
             Arrays.fill(row, null);
-        }
-        for (int i = 0; i < notNullArrayList.size(); i++) {
-            if (notNullArrayList.get(i).isEmpty()) continue;
-            for (int j = 0; j < notNullArrayList.get(i).size(); j++) {
-                shiftedBoardMatrix[i][j] = notNullArrayList.get(i).get(j);
+        for (int row = 0; row < notNullArrayList.size(); row++) {
+            if (notNullArrayList.get(row).isEmpty()) continue;
+            for (int col = 0; col < notNullArrayList.get(row).size(); col++) {
+                if (notNullArrayList.get(row).get(col) == null) continue;
+                shiftedBoardMatrix[row][col] = notNullArrayList.get(row).get(col);
             }
         }
-
         return shiftedBoardMatrix;
     }
 
@@ -219,30 +218,28 @@ public class GameLogic {
         for (Tile[] row : shiftedBoardMatrix) {
             Arrays.fill(row, null);
         }
-        for (int i = 0; i < notNullArrayList.size(); i++) {
-            if (notNullArrayList.get(i).isEmpty()) continue;
-            for (int j = 0; j < notNullArrayList.get(i).size(); j++) {
-                shiftedBoardMatrix[i][this.gameBoardSize - 1 - j] = notNullArrayList.get(i).get(j);
+        for (int row = 0; row < notNullArrayList.size(); row++) {
+            if (notNullArrayList.get(row).isEmpty()) continue;
+            for (int col = 0; col < notNullArrayList.get(row).size(); col++) {
+                if (notNullArrayList.get(row).get(col) == null) continue;
+                shiftedBoardMatrix[row][(this.gameBoardSize - 1 - (notNullArrayList.get(row).size() - 1 - col))] = notNullArrayList.get(row).get(col);
             }
         }
-
         return shiftedBoardMatrix;
     }
 
     private Tile[][] moveTilesUp(Tile[][] inputBoardMatrix) {
         Tile[][] newMatrix = UtilsFunctions.transposeMatrix(inputBoardMatrix);
-
         ArrayList<ArrayList<Tile>> notNullTiles = new ArrayList<>();
-        for (int i = 0; i < newMatrix.length; i++) {
+        for (int row = 0; row < newMatrix.length; row++) {
             ArrayList<Tile> notNullRow = new ArrayList<>();
-            for (int j = 0; j < newMatrix.length; j++) {
-                if (newMatrix[i][j] != null)
-                    notNullRow.add(this.board[i][j]);
+            for (int col = 0; col < newMatrix.length; col++) {
+                if (newMatrix[row][col] != null)
+                    notNullRow.add(newMatrix[row][col]);
             }
             notNullTiles.add(notNullRow);
         }
-
-        Tile[][] shiftedTransposedMatrix = this.moveTilesLeft(notNullTiles);
+        Tile[][] shiftedTransposedMatrix = moveTilesLeft(notNullTiles);
         return UtilsFunctions.transposeMatrix(shiftedTransposedMatrix);
     }
 
@@ -250,16 +247,15 @@ public class GameLogic {
         Tile[][] newMatrix = UtilsFunctions.transposeMatrix(inputBoardMatrix);
 
         ArrayList<ArrayList<Tile>> notNullTiles = new ArrayList<>();
-        for (int i = 0; i < newMatrix.length; i++) {
+        for (int row = 0; row < newMatrix.length; row++) {
             ArrayList<Tile> notNullRow = new ArrayList<>();
-            for (int j = 0; j < newMatrix.length; j++) {
-                if (newMatrix[i][j] != null)
-                    notNullRow.add(this.board[i][j]);
+            for (int col = 0; col < newMatrix.length; col++) {
+                if (newMatrix[row][col] != null)
+                    notNullRow.add(newMatrix[row][col]);
             }
             notNullTiles.add(notNullRow);
         }
-
-        Tile[][] shiftedTransposedMatrix = this.moveTilesRight(notNullTiles);
+        Tile[][] shiftedTransposedMatrix = moveTilesRight(notNullTiles);
         return UtilsFunctions.transposeMatrix(shiftedTransposedMatrix);
     }
 
