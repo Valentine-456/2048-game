@@ -2,6 +2,7 @@ package com.project.game;
 
 import com.project.game.keys.Directions;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
@@ -21,8 +22,11 @@ public class Main {
 //        System.out.println(Arrays.deepToString(gameLogic.board));
 //        System.out.println(Arrays.deepToString(UtilsFunctions.transposeMatrix(UtilsFunctions.transposeMatrix(gameLogic.board))));
         gameLogic.gameTurn(Directions.DOWN);
+        gameLogic.gameTurn(Directions.RIGHT);
         gameLogic.gameTurn(Directions.LEFT);
-//        gameLogic.gameTurn(Directions.DOWN);
+        gameLogic.gameTurn(Directions.UP);
+        gameLogic.gameTurn(Directions.RIGHT);
+        gameLogic.gameTurn(Directions.DOWN);
         System.out.println(Arrays.deepToString(gameLogic.board));
         System.out.println(gameLogic.score.getScore());
         System.out.println(gameLogic.score.getNumOfSteps());
