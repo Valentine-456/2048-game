@@ -1,4 +1,4 @@
-package com.project.game;
+package com.project.game.gameLogic;
 
 
 import java.util.Random;

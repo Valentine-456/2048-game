@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,24 +11,24 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="692.0" prefWidth="702.0" style="-fx-background-color: #faf8ef;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainController">
+<AnchorPane prefHeight="690.0" prefWidth="700.0" style="-fx-background-color: #faf8ef;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.game.MainController">
    <children>
       <Label layoutX="33.0" layoutY="15.0" prefHeight="49.0" prefWidth="91.0" text="2048">
          <font>
             <Font name="Times New Roman" size="43.0" />
          </font>
       </Label>
-      <Label layoutX="461.0" layoutY="15.0" text="Score:">
+      <Label layoutX="509.0" layoutY="15.0" text="Score:">
          <font>
             <Font name="Times New Roman" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="451.0" layoutY="35.0" prefHeight="30.0" prefWidth="72.0" text="123123">
+      <Label fx:id="score" alignment="CENTER" layoutX="499.0" layoutY="38.0" prefHeight="30.0" prefWidth="72.0" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="549.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#getBack" prefHeight="38.0" prefWidth="38.0">
+      <Button fx:id="backButton" layoutX="579.0" layoutY="16.0" mnemonicParsing="false" onMouseClicked="#getBack" prefHeight="38.0" prefWidth="38.0">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #bbada0;">
                <image>
@@ -62,65 +61,45 @@
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="tile_1_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button fx:id="tile_1_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-2" />
-               </styleClass>
             </Button>
-            <Button fx:id="tile_1_3" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button fx:id="tile_1_3" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-4" />
-               </styleClass>
             </Button>
-            <Button fx:id="tile_1_4" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Button fx:id="tile_1_4" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-8" />
-               </styleClass>
             </Button>
-            <Button fx:id="tile_2_1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button fx:id="tile_2_1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font size="28.0" />
                </font>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-2048" />
-               </styleClass>
             </Button>
-            <Button fx:id="tile_2_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button fx:id="tile_2_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <font>
                   <Font size="28.0" />
                </font>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-512" />
-               </styleClass>
             </Button>
             <Button fx:id="tile_2_3" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
@@ -210,62 +189,42 @@
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="tile_0_1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
+            <Button fx:id="tile_0_1" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-32" />
-               </styleClass>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="tile_0_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
+            <Button fx:id="tile_0_2" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2">
                <font>
                   <Font size="28.0" />
                </font>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-32" />
-               </styleClass>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="tile_0_3" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3">
+            <Button fx:id="tile_0_3" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="3">
                <font>
                   <Font size="28.0" />
                </font>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-64" />
-               </styleClass>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="tile_0_4" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4">
+            <Button fx:id="tile_0_4" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="4">
                <font>
                   <Font size="28.0" />
                </font>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-128" />
-               </styleClass>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
             </Button>
-            <Button fx:id="tile_1_0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
+            <Button fx:id="tile_1_0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" styleClass="game-cell" textAlignment="CENTER" wrapText="true" GridPane.rowIndex="1">
                <font>
                   <Font size="28.0" />
                </font>
-               <styleClass>
-                  <String fx:value="game-cell" />
-                  <String fx:value="cell-4" />
-               </styleClass>
                <GridPane.margin>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </GridPane.margin>
