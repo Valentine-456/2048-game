@@ -33,40 +33,40 @@ public class MainController {
     private void onEasyClicked(MouseEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         this.gameSession = new GameLogic(8);
-        switchScene("level-easy.fxml", stage, "2048-8x8", 800);
+        switchScene("level-easy.fxml", stage, "2048-8x8", 775, 680);
     }
 
     @FXML
     private void onEasyMedClicked(MouseEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         this.gameSession = new GameLogic(6);
-        switchScene("level-easy-medium.fxml", stage, "2048-6x6", 610);
+        switchScene("level-easy-medium.fxml", stage, "2048-6x6", 650, 610);
     }
 
     @FXML
     private void onMediumClicked(MouseEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         this.gameSession = new GameLogic(5);
-        switchScene("level-medium.fxml", stage, "2048-5x5", 650);
+        switchScene("level-medium.fxml", stage, "2048-5x5", 700, 690);
     }
 
     @FXML
     private void onMediumHardClicked(MouseEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         this.gameSession = new GameLogic(4);
-        switchScene("level-medium-hard.fxml", stage, "2048-4x4", 610);
+        switchScene("level-medium-hard.fxml", stage, "2048-4x4", 650, 610);
     }
 
     @FXML
     private void onHardClicked(MouseEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         this.gameSession = new GameLogic(3);
-        switchScene("level-hard.fxml", stage, "2048-3x3", 610);
+        switchScene("level-hard.fxml", stage, "2048-3x3", 650, 610);
     }
 
-    private void switchScene(String sceneFileName, Stage stage, String title, int height) throws IOException {
+    private void switchScene(String sceneFileName, Stage stage, String title, int width, int height) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(GameApplication.class.getResource(sceneFileName));
-        Scene scene = new Scene(fxmlLoader.load(), 650, height);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setTitle(title);
         stage.setScene(scene);
         stage.show();
