@@ -23,8 +23,8 @@ public class GameLogic {
         updateScore(scoreIncrement);
         if (checkEmptyBoxes())
             addRandomTile();
-
-// add checking whether game is over
+        else if(checkIfGameOver())
+            this.score.setGameOver(true);
     }
 
     private int mergeTiles(Directions direction) {
@@ -271,5 +271,23 @@ public class GameLogic {
             }
         }
         return false;
+    }
+
+    private boolean checkIfGameOver() {
+        ArrayList<ArrayList<Tile>> tilesToMergeList = new ArrayList<>();
+        for (int i = 0; i < getRenderMatrix().length; i++)
+            tilesToMergeList.add(new ArrayList<>());
+
+        ArrayList<ArrayList<Tile>> left = getTheSameTileLeft(null, tilesToMergeList);
+        if (!left.stream().allMatch(ArrayList::isEmpty)) return false;
+
+        ArrayList<ArrayList<Tile>> right = getTheSameTileRight(null, tilesToMergeList);
+        if (!right.stream().allMatch(ArrayList::isEmpty)) return false;
+
+        ArrayList<ArrayList<Tile>> up = getTheSameTileUp(null, tilesToMergeList);
+        if (!up.stream().allMatch(ArrayList::isEmpty)) return false;
+
+        ArrayList<ArrayList<Tile>> down = getTheSameTileDown(null, tilesToMergeList);
+        return down.stream().allMatch(ArrayList::isEmpty);
     }
 }
