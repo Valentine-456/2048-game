@@ -1,0 +1,8 @@
+
+…
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(´ÿˆ
+
+java:S1319"jThe type of "nestedList" should be an interface such as "List" rather than the implementation "ArrayList".(´ÿˆ
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø‹Ê•8¯û§ø›0
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Å¦Ùÿ

@@ -23,7 +23,7 @@ public class GameLogic {
         updateScore(scoreIncrement);
         if (checkEmptyBoxes())
             addRandomTile();
-        else if(checkIfGameOver())
+        else if (checkIfGameOver())
             this.score.setGameOver(true);
     }
 
@@ -115,7 +115,7 @@ public class GameLogic {
     private ArrayList<ArrayList<Tile>> getTheSameTileRight(Tile tileToFind, ArrayList<ArrayList<Tile>> tilesToMergeList) {
         for (int row = 0; row < getRenderMatrix().length; row++) {
             int col = getRenderMatrix().length - 1;
-            while (board[row][col] == null && col < getRenderMatrix().length - 1)
+            while (board[row][col] == null && col > 0)
                 col--;
             tileToFind = board[row][col];
 
@@ -161,7 +161,7 @@ public class GameLogic {
         Tile[][] newMatrix = UtilsFunctions.transposeMatrix(board);
         for (int row = 0; row < getRenderMatrix().length; row++) {
             int col = getRenderMatrix().length - 1;
-            while (newMatrix[row][col] == null && col < getRenderMatrix().length - 1)
+            while (newMatrix[row][col] == null && col > 0)
                 col--;
             tileToFind = newMatrix[row][col];
 
